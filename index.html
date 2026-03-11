@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OG Land and Tree Co. | Tree Service, Land & Stump Grinding</title>
+  <meta name="description" content="OG Land and Tree Co. provides professional tree removal, land clearing, stump grinding, and property cleanup in Conroe, The Woodlands, Magnolia, and surrounding areas. Call 346-410-8487." />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            soft: "0 18px 50px rgba(2, 6, 23, .12)",
+            lift: "0 14px 30px rgba(2, 6, 23, .18)"
+          },
+          colors: {
+            brand: {
+              green: "#2f6d3a",
+              dark: "#102218",
+              moss: "#466d4f",
+              tan: "#d8c7a1"
+            }
+          },
+          keyframes: {
+            floaty: { "0%,100%": { transform: "translateY(0px)" }, "50%": { transform: "translateY(-8px)" } },
+            fadeUp: { "0%": { opacity: 0, transform: "translateY(18px)" }, "100%": { opacity: 1, transform: "translateY(0px)" } },
+            shimmer: { "0%": { transform: "translateX(-120%) rotate(18deg)" }, "100%": { transform: "translateX(120%) rotate(18deg)" } }
+          },
+          animation: {
+            floaty: "floaty 7s ease-in-out infinite",
+            fadeUp: "fadeUp .9s ease-out both",
+            shimmer: "shimmer 3.2s linear infinite"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .bg-grid{
+      background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,.22) 1px, transparent 0);
+      background-size: 22px 22px;
+    }
+
+    .reveal{ opacity:0; transform:translateY(18px); }
+    .reveal.show{
+      opacity:1; transform:translateY(0);
+      transition: opacity .85s ease, transform .85s ease;
+    }
+
+    .link-underline{
+      background-image: linear-gradient(currentColor, currentColor);
+      background-size: 0% 2px;
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      transition: background-size .25s ease;
+    }
+    .link-underline:hover{ background-size:100% 2px; }
+
+    .btn-shimmer{ position:relative; overflow:hidden; }
+    .btn-shimmer::after{
+      content:"";
+      position:absolute; inset:-40%;
+      width:45%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.30), transparent);
+      transform: translateX(-120%) rotate(18deg);
+      animation: shimmer 3.2s linear infinite;
+      pointer-events:none;
+    }
+
+    .hero-mask{
+      background:
+        linear-gradient(to right, rgba(4,12,8,.82), rgba(4,12,8,.56), rgba(4,12,8,.25)),
+        linear-gradient(to bottom, rgba(4,12,8,.16), rgba(4,12,8,.18), rgba(248,250,252,1));
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- TOP STRIP -->
+  <div class="hidden md:block bg-brand-dark text-slate-100">
+    <div class="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between text-sm">
+      <div class="flex items-center gap-4 opacity-90">
+        <span class="inline-flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-brand-tan"></span>
+          Tree Removal • Land Clearing • Stump Grinding
+        </span>
+        <span class="hidden lg:inline">Open 24 hours • Fast response in Conroe and surrounding areas</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a class="link-underline font-semibold" href="tel:+13464108487">(346) 410-8487</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group min-w-0">
+        <img src="images/logo.png" alt="OG Land and Tree Co. logo" class="h-11 w-auto" />
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-tight text-slate-900 text-lg sm:text-xl group-hover:text-black">OG Land and Tree Co.</div>
+          <div class="text-xs text-slate-500 -mt-0.5">Professional Tree Service & Land Clearing</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+        <a href="#services" class="text-slate-700 hover:text-slate-950 link-underline">Services</a>
+        <a href="#reviews" class="text-slate-700 hover:text-slate-950 link-underline">Reviews</a>
+        <a href="#process" class="text-slate-700 hover:text-slate-950 link-underline">Process</a>
+        <a href="#about" class="text-slate-700 hover:text-slate-950 link-underline">About</a>
+        <a href="#quote" class="text-slate-700 hover:text-slate-950 link-underline">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+13464108487"
+           class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-dark px-4 py-2 text-sm font-semibold text-white shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+          Call Now <span class="opacity-80">•</span> (346) 410-8487
+        </a>
+
+        <button id="menuBtn"
+          class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition"
+          aria-label="Open menu">
+          <svg class="h-5 w-5 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-4 grid gap-3 text-sm font-semibold">
+        <a href="#services" class="py-2 text-slate-700 hover:text-slate-900">Services</a>
+        <a href="#reviews" class="py-2 text-slate-700 hover:text-slate-900">Reviews</a>
+        <a href="#process" class="py-2 text-slate-700 hover:text-slate-900">Process</a>
+        <a href="#about" class="py-2 text-slate-700 hover:text-slate-900">About</a>
+        <a href="#quote" class="py-2 text-slate-700 hover:text-slate-900">Contact</a>
+        <a href="tel:+13464108487"
+           class="mt-2 inline-flex items-center justify-center rounded-xl bg-brand-dark px-4 py-3 text-white shadow-soft hover:shadow-lift transition">
+          Tap to Call (346) 410-8487
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/hero.jpg" alt="Tree trimming and tree service by OG Land and Tree Co." class="h-full w-full object-cover" />
+        <div class="absolute inset-0 hero-mask"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-6 pt-16 pb-16 md:pt-24 md:pb-20">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur px-4 py-2 text-xs font-semibold text-slate-800 shadow-soft border border-slate-200/70">
+            <span class="h-2 w-2 rounded-full bg-brand-green"></span>
+            Trusted local tree service in Conroe, The Woodlands & Magnolia
+          </div>
+
+          <h1 class="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight text-white animate-fadeUp">
+             Tree work, Landscaping, and
+            <span class="text-brand-tan">results done right.</span>
+          </h1>
+
+          <p class="mt-5 text-base md:text-lg text-slate-200 leading-relaxed reveal">
+            OG Land and Tree Co. provides professional tree removal, stump grinding, land clearing, and property cleanup with the precision, speed, and attention to detail homeowners count on.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 reveal">
+            <a href="#quote"
+               class="btn-shimmer inline-flex items-center justify-center rounded-2xl bg-brand-tan px-6 py-3.5 font-bold text-slate-950 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+              Get a Free Quote
+            </a>
+            <a href="#services"
+               class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3.5 font-bold text-white ring-1 ring-white/25 hover:bg-white/15 transition">
+              View Services
+            </a>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-200 reveal">
+            <span class="inline-flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-brand-tan"></span> 5.0 Stars
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-brand-tan"></span> Fair Pricing
+            </span>
+            <span class="inline-flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-brand-tan"></span> Fast Cleanup
+            </span>
+          </div>
+        </div>
+
+        <!-- TRUST CARDS -->
+        <div class="mt-12 grid lg:grid-cols-3 gap-5">
+          <div class="reveal rounded-3xl bg-white shadow-soft p-6 border border-slate-100 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-start gap-4">
+              <div class="h-12 w-12 rounded-2xl bg-green-100 flex items-center justify-center">
+                <svg class="h-6 w-6 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-extrabold text-slate-900">Precision Work</div>
+                <p class="mt-1 text-sm text-slate-600">Customers consistently mention safe removals done without damaging flower beds, fences, or landscaping.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl bg-white shadow-soft p-6 border border-slate-100 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-start gap-4">
+              <div class="h-12 w-12 rounded-2xl bg-amber-100 flex items-center justify-center">
+                <svg class="h-6 w-6 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-extrabold text-slate-900">Safe & Professional</div>
+                <p class="mt-1 text-sm text-slate-600">Tree removal, stump grinding, and land clearing handled with careful planning and professional equipment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl bg-white shadow-soft p-6 border border-slate-100 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-start gap-4">
+              <div class="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center">
+                <svg class="h-6 w-6 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" d="M12 8v5l3 2" />
+                  <path stroke-linecap="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-extrabold text-slate-900">Fast Turnaround</div>
+                <p class="mt-1 text-sm text-slate-600">Reviews highlight next-day response, one-day land clearing, and jobs completed efficiently from start to cleanup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-16 md:py-20 bg-white border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-2xl reveal">
+          <div class="text-xs font-bold tracking-widest text-slate-500">WHAT WE DO</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Professional tree and land services for homes and properties</h2>
+          <p class="mt-3 text-slate-600">
+            From dangerous tree removals to full brush clearing, OG Land and Tree Co. helps property owners keep their land safe, clean, and ready for what’s next.
+          </p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-3 gap-6">
+          <!-- SERVICE 1 -->
+          <article class="reveal rounded-3xl bg-slate-50 border border-slate-100 shadow-soft overflow-hidden hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="h-56 bg-slate-200">
+              <img src="images/service-1.jpg" alt="Fresh mulch and landscape cleanup by OG Land and Tree Co." class="h-full w-full object-cover" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-xl font-extrabold">Property Cleanup</h3>
+                <span class="text-xs font-bold rounded-full bg-green-100 text-green-800 px-3 py-1 whitespace-nowrap">Clean Finish</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600">
+                Cleanup and finishing work that leaves the property looking sharp, tidy, and professionally cared for.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-700">
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Mulch bed cleanup</li>
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Brush and debris removal</li>
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Detailed final cleanup</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SERVICE 2 -->
+          <article class="reveal rounded-3xl bg-slate-50 border border-slate-100 shadow-soft overflow-hidden hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="h-56 bg-slate-200">
+              <img src="images/service-2.jpg" alt="Tree trimming and tree removal service by OG Land and Tree Co." class="h-full w-full object-cover" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between gap-3">
+                <h3 class="text-xl font-extrabold">Tree Removal & Trimming</h3>
+                <span class="text-xs font-bold rounded-full bg-amber-100 text-amber-800 px-3 py-1 whitespace-nowrap">Most Requested</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-600">
+                Safe tree removals and trimming services done with precision to protect nearby homes, yards, and landscaping.
+              </p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-700">
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Large tree removal</li>
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Precision around structures</li>
+                <li class="flex gap-2"><span class="mt-1.5 h-2 w-2 rounded-full bg-brand-green"></span>Fast response for problem trees</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SERVICE 3 -->
+          <article class="reveal rounded-3xl bg-slate-50 border border-slate-100 shadow-soft p-6 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="h-12 w-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center shadow-soft">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M4 12h16" />
+                <path stroke-linecap="round" d="M12 4v16" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-extrabold">Land Clearing & Stump Grinding</h3>
+            <p class="mt-3 text-sm text-slate-600">
+              Overgrown land, thick brush, and leftover stumps cleared efficiently so your property is usable and ready for its next phase.
+            </p>
+
+            <div class="mt-6 grid gap-3">
+              <div class="rounded-2xl bg-white border border-slate-100 p-4">
+                <div class="font-bold">Land Clearing</div>
+                <div class="text-sm text-slate-600">Brush, shrubs, and tree lines removed quickly</div>
+              </div>
+              <div class="rounded-2xl bg-white border border-slate-100 p-4">
+                <div class="font-bold">Stump Grinding</div>
+                <div class="text-sm text-slate-600">Clean finish after removals and property work</div>
+              </div>
+              <div class="rounded-2xl bg-white border border-slate-100 p-4">
+                <div class="font-bold">Property Ready</div>
+                <div class="text-sm text-slate-600">Safer, cleaner, and easier to use</div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <a href="#quote"
+                 class="inline-flex items-center justify-center w-full rounded-2xl bg-brand-dark px-5 py-3 font-bold text-white shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+                Request a Quote →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="bg-brand-dark text-white">
+      <div class="mx-auto max-w-7xl px-6 py-14">
+        <div class="grid lg:grid-cols-[1.3fr_.7fr] gap-8 items-center">
+          <div class="reveal">
+            <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">Need tree work done fast and done right?</h3>
+            <p class="mt-3 text-slate-200">
+              From dangerous leaning trees to full-acre brush clearing, OG Land and Tree Co. delivers clean, efficient work with fair pricing and real attention to detail.
+            </p>
+          </div>
+          <div class="reveal flex flex-col sm:flex-row gap-3 lg:justify-end">
+            <a href="#quote"
+               class="btn-shimmer inline-flex items-center justify-center rounded-2xl bg-brand-tan px-6 py-3.5 font-extrabold text-slate-950 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+              Request Free Quote
+            </a>
+            <a href="tel:+13464108487"
+               class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3.5 font-extrabold text-white ring-1 ring-white/20 hover:bg-white/15 transition">
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-10 text-center">
+          <div class="reveal">
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center shadow-soft">
+              <svg class="h-6 w-6 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M12 21s7-4 7-10V7l-7-4-7 4v4c0 6 7 10 7 10Z" />
+              </svg>
+            </div>
+            <div class="mt-4 font-extrabold">Service Area</div>
+            <div class="mt-2 text-sm text-slate-600">Conroe, The Woodlands, Magnolia, and surrounding areas</div>
+            <a href="#quote" class="mt-3 inline-flex text-sm font-bold link-underline text-slate-900">Ask About Your Area</a>
+          </div>
+
+          <div class="reveal">
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center shadow-soft">
+              <svg class="h-6 w-6 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M12 8v5l3 2" />
+                <path stroke-linecap="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            </div>
+            <div class="mt-4 font-extrabold">Business Hours</div>
+            <div class="mt-2 text-sm text-slate-600">
+              Open 24 Hours<br />
+              Fast scheduling and next-day response on many jobs
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="mx-auto h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center shadow-soft">
+              <svg class="h-6 w-6 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92Z" />
+              </svg>
+            </div>
+            <div class="mt-4 font-extrabold">Get In Touch</div>
+            <div class="mt-2 text-sm text-slate-600">Call now for tree removal, stump grinding, or land clearing quotes.</div>
+            <a href="tel:+13464108487" class="mt-3 inline-flex text-sm font-bold link-underline text-slate-900">(346) 410-8487</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-16 md:py-20 bg-slate-50 border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-2xl reveal">
+          <div class="text-xs font-bold tracking-widest text-slate-500">CUSTOMER REVIEWS</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Trusted by homeowners across the area</h2>
+          <p class="mt-3 text-slate-600">
+            OG Land and Tree Co. has earned a strong reputation for precision tree work, fair pricing, fast turnaround, and spotless cleanup.
+          </p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-3 gap-6">
+          <figure class="reveal rounded-3xl bg-white border border-slate-100 shadow-soft p-6 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">“Amazing precision work.”</div>
+              <div class="text-amber-400 font-extrabold">★★★★★</div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600">
+              “OG Land and Tree Co took down three large pine trees in my Conroe backyard without touching my flower beds. Fair price and they finished in one afternoon.”
+            </p>
+            <figcaption class="mt-4 text-sm font-bold text-slate-900">— John F.</figcaption>
+          </figure>
+
+          <figure class="reveal rounded-3xl bg-white border border-slate-100 shadow-soft p-6 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">“Best tree service in Conroe.”</div>
+              <div class="text-amber-400 font-extrabold">★★★★★</div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600">
+              “They removed a huge oak leaning toward my fence, got out the next day, worked fast, and cleaned everything up spotless. I already referred neighbors.”
+            </p>
+            <figcaption class="mt-4 text-sm font-bold text-slate-900">— David E.</figcaption>
+          </figure>
+
+          <figure class="reveal rounded-3xl bg-white border border-slate-100 shadow-soft p-6 hover:shadow-lift hover:-translate-y-1 transition">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">“Exceeded every expectation.”</div>
+              <div class="text-amber-400 font-extrabold">★★★★★</div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600">
+              “They cleared overgrown brush and trees at my property in The Woodlands in one day. The property looked completely transformed.”
+            </p>
+            <figcaption class="mt-4 text-sm font-bold text-slate-900">— Mari</figcaption>
+          </figure>
+        </div>
+
+        <div class="mt-10 reveal rounded-3xl bg-white border border-slate-100 shadow-soft p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <div class="font-extrabold text-lg">5.0 stars from 23 reviews</div>
+            <div class="text-sm text-slate-600 mt-1">Customers mention precision, stump grinding, land clearing, fair pricing, and excellent cleanup.</div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="tel:+13464108487" class="inline-flex items-center justify-center rounded-2xl bg-brand-dark px-6 py-3 font-extrabold text-white shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+              Call (346) 410-8487
+            </a>
+            <a href="#quote" class="inline-flex items-center justify-center rounded-2xl bg-slate-100 px-6 py-3 font-extrabold text-slate-900 hover:bg-slate-200 transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-16 md:py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center max-w-3xl mx-auto reveal">
+          <div class="text-xs font-bold tracking-widest text-slate-500">HOW IT WORKS</div>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Simple, safe, and efficient from start to finish</h2>
+          <p class="mt-3 text-slate-600">
+            Whether it’s one tree or a full property clearing job, the process stays straightforward and customer-focused.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-4 gap-6 items-start">
+          <div class="reveal text-center">
+            <div class="mx-auto h-16 w-16 rounded-full bg-brand-dark text-white flex items-center justify-center shadow-soft">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92Z" />
+              </svg>
+            </div>
+            <div class="mt-5 font-extrabold">1. Call or Request a Quote</div>
+            <div class="mt-2 text-sm text-slate-600">Tell the team what you need and what’s happening on the property.</div>
+          </div>
+
+          <div class="reveal text-center">
+            <div class="mx-auto h-16 w-16 rounded-full bg-brand-dark text-white flex items-center justify-center shadow-soft">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M9 11h6" />
+                <path stroke-linecap="round" d="M9 15h6" />
+                <path stroke-linecap="round" d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+              </svg>
+            </div>
+            <div class="mt-5 font-extrabold">2. Get the Plan & Pricing</div>
+            <div class="mt-2 text-sm text-slate-600">Clear recommendations and fair pricing based on the scope of the job.</div>
+          </div>
+
+          <div class="reveal text-center">
+            <div class="mx-auto h-16 w-16 rounded-full bg-brand-dark text-white flex items-center justify-center shadow-soft">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M14.7 6.3a1 1 0 0 1 1.4 1.4l-8.8 8.8H6v-1.3l8.7-8.9Z" />
+                <path stroke-linecap="round" d="M16 5l3 3" />
+                <path stroke-linecap="round" d="M6 20h12" />
+              </svg>
+            </div>
+            <div class="mt-5 font-extrabold">3. Work Gets Done Right</div>
+            <div class="mt-2 text-sm text-slate-600">Tree removal, clearing, or stump work completed safely and efficiently.</div>
+          </div>
+
+          <div class="reveal text-center">
+            <div class="mx-auto h-16 w-16 rounded-full bg-brand-tan text-slate-950 flex items-center justify-center shadow-soft">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+            <div class="mt-5 font-extrabold">4. Clean Finish</div>
+            <div class="mt-2 text-sm text-slate-600">The property is cleaned up and left looking better, safer, and ready to use.</div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center reveal">
+          <a href="#quote"
+             class="inline-flex items-center justify-center rounded-2xl bg-brand-dark px-8 py-3.5 font-extrabold text-white shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+            Get Your Free Quote →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 md:py-20 bg-slate-50 border-y border-slate-100">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-10 items-center">
+          <div class="reveal">
+            <div class="text-xs font-bold tracking-widest text-slate-500">ABOUT OG LAND AND TREE CO.</div>
+            <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Local service built on quality work and real reliability</h2>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              OG Land and Tree Co. serves Conroe and surrounding communities with dependable tree removal, stump grinding, land clearing, and property cleanup. The company is known for showing up fast, working safely, and leaving properties cleaner than customers expect.
+            </p>
+            <p class="mt-4 text-slate-600 leading-relaxed">
+              Review after review highlights the same things: fair pricing, strong communication, careful work around homes and landscaping, and excellent cleanup after the job is finished. Whether it’s a large backyard pine, a leaning oak, or an acre of heavy brush, the team focuses on getting it done right.
+            </p>
+          </div>
+
+          <div class="reveal rounded-3xl bg-white border border-slate-100 shadow-soft p-8 md:p-10">
+            <div class="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-xs font-bold text-green-800">
+              Why Customers Call OG
+            </div>
+
+            <div class="mt-6 grid gap-4">
+              <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
+                <div class="font-extrabold text-slate-900">Fast response</div>
+                <div class="mt-1 text-sm text-slate-600">Customers mention next-day scheduling and efficient turnaround.</div>
+              </div>
+
+              <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
+                <div class="font-extrabold text-slate-900">Fair prices</div>
+                <div class="mt-1 text-sm text-slate-600">Reviewers repeatedly call out honest pricing and strong value.</div>
+              </div>
+
+              <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
+                <div class="font-extrabold text-slate-900">Spotless cleanup</div>
+                <div class="mt-1 text-sm text-slate-600">A common theme in reviews is how clean the property looked afterward.</div>
+              </div>
+
+              <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
+                <div class="font-extrabold text-slate-900">Precision around property</div>
+                <div class="mt-1 text-sm text-slate-600">Tree work is done carefully around gardens, decks, fences, and homes.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA / FORM -->
+    <section id="quote" class="relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/hero.jpg" alt="Tree service background" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-brand-dark/80"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-10 items-start">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white ring-1 ring-white/15">
+              <span class="h-2 w-2 rounded-full bg-brand-tan"></span>
+              Tree Removal • Stump Grinding • Land Clearing • Cleanup
+            </div>
+
+            <h2 class="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+              Ready to clear it, clean it, or take it down?
+            </h2>
+
+            <p class="mt-4 text-slate-200 leading-relaxed">
+              Call OG Land and Tree Co. for tree removal, land clearing, stump grinding, and property cleanup done with speed, care, and professionalism.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="tel:+13464108487"
+                 class="btn-shimmer inline-flex items-center justify-center rounded-2xl bg-brand-tan px-7 py-3.5 font-extrabold text-slate-950 shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+                Call (346) 410-8487
+              </a>
+              <a href="#services"
+                 class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-7 py-3.5 font-extrabold text-white ring-1 ring-white/20 hover:bg-white/15 transition">
+                View Services
+              </a>
+            </div>
+
+            <div class="mt-8 grid sm:grid-cols-3 gap-4">
+              <div class="reveal rounded-2xl bg-white/10 ring-1 ring-white/15 p-4 backdrop-blur">
+                <div class="text-white font-extrabold">Safe</div>
+                <div class="text-slate-200 text-sm">Careful work around property</div>
+              </div>
+              <div class="reveal rounded-2xl bg-white/10 ring-1 ring-white/15 p-4 backdrop-blur">
+                <div class="text-white font-extrabold">Fast</div>
+                <div class="text-slate-200 text-sm">Quick scheduling and completion</div>
+              </div>
+              <div class="reveal rounded-2xl bg-white/10 ring-1 ring-white/15 p-4 backdrop-blur">
+                <div class="text-white font-extrabold">Clean</div>
+                <div class="text-slate-200 text-sm">Excellent cleanup after the job</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORM -->
+          <div class="reveal rounded-3xl bg-white/92 backdrop-blur border border-white/40 shadow-soft p-6 md:p-8">
+            <div class="font-extrabold text-xl">Request a Free Quote</div>
+            <p class="mt-2 text-sm text-slate-600">
+              Ready to get started? Tell us a little about the job and we’ll be in touch.
+            </p>
+
+            <form class="mt-6 grid gap-4" onsubmit="event.preventDefault(); demoSubmit();">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-sm font-bold text-slate-700">First Name</label>
+                  <input required type="text" placeholder="First name"
+                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-green-300/50" />
+                </div>
+                <div>
+                  <label class="text-sm font-bold text-slate-700">Last Name</label>
+                  <input required type="text" placeholder="Last name"
+                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-green-300/50" />
+                </div>
+              </div>
+
+              <div>
+                <label class="text-sm font-bold text-slate-700">Phone</label>
+                <input required type="tel" placeholder="(346) 410-8487"
+                       class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-green-300/50" />
+              </div>
+
+              <div>
+                <label class="text-sm font-bold text-slate-700">Service Needed</label>
+                <select class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-green-300/50">
+                  <option>Tree Removal</option>
+                  <option>Tree Trimming</option>
+                  <option>Stump Grinding</option>
+                  <option>Land Clearing</option>
+                  <option>Property Cleanup</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="text-sm font-bold text-slate-700">Project Details</label>
+                <textarea rows="4" placeholder="Tell us what you need..."
+                          class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-green-300/50"></textarea>
+              </div>
+
+              <button type="submit"
+                class="btn-shimmer mt-2 inline-flex items-center justify-center rounded-2xl bg-brand-dark px-6 py-3.5 font-extrabold text-white shadow-soft hover:shadow-lift hover:-translate-y-0.5 transition">
+                Submit Request
+              </button>
+
+              <p id="demoMsg" class="hidden text-sm font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+                ✅ Quote request submitted! On the live site, this would send instantly.
+              </p>
+
+              <div class="text-xs text-slate-500">
+                Prefer to talk now? Call <a class="font-bold link-underline text-slate-900" href="tel:+13464108487">(346) 410-8487</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-200">
+      <div class="mx-auto max-w-7xl px-6 py-14">
+        <div class="grid md:grid-cols-4 gap-10">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3">
+              <img src="images/logo.png" alt="OG Land and Tree Co. logo" class="h-11 w-auto" />
+              <div>
+                <div class="font-extrabold text-white">OG Land and Tree Co.</div>
+                <div class="text-xs text-slate-400 -mt-0.5">Professional Tree Service & Land Clearing</div>
+              </div>
+            </div>
+
+            <p class="mt-4 text-sm text-slate-300 max-w-xl">
+              OG Land and Tree Co. provides dependable tree removal, stump grinding, land clearing, and cleanup services for Conroe, The Woodlands, Magnolia, and surrounding communities.
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="tel:+13464108487" class="inline-flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-2 text-sm font-extrabold text-white ring-1 ring-white/10 hover:bg-white/15 transition">
+                (346) 410-8487
+              </a>
+              <a href="#quote" class="inline-flex items-center gap-2 rounded-2xl bg-brand-tan px-4 py-2 text-sm font-extrabold text-slate-950 shadow-soft hover:shadow-lift transition">
+                Get a Quote
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-extrabold text-white">Quick Links</div>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><a class="link-underline" href="#services">Services</a></li>
+              <li><a class="link-underline" href="#reviews">Reviews</a></li>
+              <li><a class="link-underline" href="#process">Process</a></li>
+              <li><a class="link-underline" href="#about">About</a></li>
+              <li><a class="link-underline" href="#quote">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="font-extrabold text-white">Contact</div>
+            <div class="mt-4 text-sm text-slate-300 space-y-2">
+              <div>Conroe, TX</div>
+              <div>Open 24 Hours</div>
+              <div>Tree Removal • Land Clearing • Stump Grinding</div>
+              <div class="pt-2">
+                Phone: <a class="font-bold text-white link-underline" href="tel:+13464108487">(346) 410-8487</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-slate-400">
+          <div>© <span id="year"></span> OG Land and Tree Co. All rights reserved.</div>
+          <div class="opacity-80">Built with HTML + Tailwind CDN</div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn?.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+    mobileMenu?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    const revealEls = document.querySelectorAll(".reveal");
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.88;
+      revealEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add("show");
+      });
+    };
+    window.addEventListener("scroll", reveal, { passive: true });
+    window.addEventListener("load", reveal);
+
+    function demoSubmit(){
+      const msg = document.getElementById("demoMsg");
+      msg.classList.remove("hidden");
+      msg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      setTimeout(() => msg.classList.add("hidden"), 4500);
+    }
+  </script>
+
+  <!--
+    REQUIRED IMAGE PATHS:
+    /images/logo.png
+    /images/hero.jpg
+    /images/service-1.jpg
+    /images/service-2.jpg
+  -->
+</body>
+</html>
